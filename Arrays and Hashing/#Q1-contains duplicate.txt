@@ -1,0 +1,13 @@
+#Q1-contains duplicate
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        setArray=set()
+        for i in nums:
+            if i in setArray:
+                return True
+            else:
+                setArray.add(i)
+    
+        return False
+        
+        #this code cheks if the number i is already present in the array , if not then add it to the set
