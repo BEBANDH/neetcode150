@@ -1,0 +1,17 @@
+#q2-Anagram
+#an anagram has the same alphabets or letters to the other word that it is compared with 
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        count= defaultdict(int) #making a dictionary of integers 
+
+        for x in s: 
+            count[x] += 1    #count frquency of every character in string s
+
+        for x in t:
+            count[x] -=1     #decrease the frequency of characters in stringm t
+
+        for val in count.values(): #check if any character has left with non zero frequency 
+            if val != 0:
+                return False
+        
+        return True
