@@ -1,0 +1,12 @@
+#Q4 Group Anagrams
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        MyMap={}
+        for word in strs:
+            temp=''.join(sorted(word))  
+            if temp in MyMap:
+                MyMap[temp].append(word)
+            else:
+                MyMap[temp]=[word]
+
+        return MyMap.values()  
